@@ -1,0 +1,88 @@
+{
+  "data": [
+    {
+      "name": "Asia",
+      "children": [
+        {
+          "name": "Japan",
+          "children": ["Tokio", "Kioto"]
+        },
+        {
+          "name": "Thailand",
+          "children": ["Bangkok", "Krabi"]
+        },
+        {
+          "name": "Vietnam",
+          "children": ["Ha Noi", "Hai Phong"]
+        },
+        {
+          "name": "South Korea",
+          "children": ["Seoul", "Incheon"]
+        }
+      ]
+    },
+    {
+      "name": "Europe",
+      "children": [
+        {
+          "name": "Ukraine",
+          "children": ["Kyiv", "Odessa"]
+        },
+        {
+          "name": "Poland",
+          "children": ["Warsaw", "Poznan"]
+        },
+        {
+          "name": "Slovakia",
+          "children": ["Bratislava", "Kosice"]
+        },
+        {
+          "name": "Austria",
+          "children": ["Wien", "Zaltzburg"]
+        }
+      ]
+    },
+    {
+      "name": "North America",
+      "children": [
+        {
+          "name": "United States",
+          "children": ["New York", "Boston"]
+        },
+        {
+          "name": "Canada",
+          "children": ["Ottawa", "Montreal"]
+        },
+        {
+          "name": "Mexico",
+          "children": ["Ciudad de Mexico", "Monterray"]
+        },
+        {
+          "name": "Nicaragua",
+          "children": ["Managua", "Salvador"]
+        }
+      ]
+    },
+    {
+      "name": "South America",
+      "children": [
+        {
+          "name": "Brazilia",
+          "children": ["Brazilia", "San Paolo"]
+        },
+        {
+          "name": "Argentina",
+          "children": ["Buenos-Aires", "Rosario"]
+        },
+        {
+          "name": "Colombia",
+          "children": ["Bogota", "Medellin"]
+        },
+        {
+          "name": "Peru",
+          "children": ["Lima", "Cusco"]
+        }
+      ]
+    }
+  ]
+}
