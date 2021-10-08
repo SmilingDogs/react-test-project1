@@ -23,8 +23,31 @@
   padding: 15px 30px;
   margin-bottom: 20px;
 }
-F .country-name {
+
+.continent-name {
   position: relative;
+  cursor: pointer;
+}
+
+.continent-name::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 40px;
+  width: 920px;
+  height: 1px;
+  border: 1px dotted #000;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.no-connection::after {
+  content: none;
+}
+
+.country-name {
+  position: relative;
+  cursor: pointer;
 }
 .country-name::after {
   content: "";
@@ -52,26 +75,6 @@ F .country-name {
   height: 1px;
   border: 1px dotted #000;
   transform: translateX(-314px);
-}
-.continent-name {
-  position: relative;
-  cursor: pointer;
-}
-
-.continent-name::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 40px;
-  width: 920px;
-  height: 1px;
-  border: 1px dotted #000;
-  transform: rotate(90deg);
-  transform-origin: top left;
-}
-
-.no-connection::after {
-  content: none;
 }
 
 .hide {

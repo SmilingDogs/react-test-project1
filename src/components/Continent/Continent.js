@@ -3,9 +3,10 @@ import { useState, useRef } from "react";
 import Country from "../Country/Country";
 
 const Continent = ({ name, children }) => {
-    
+
   const continentRef = useRef(null);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
+
   const toggleContent = () => {
     setVisible(!visible);
     continentRef.current.scrollIntoView();
@@ -22,7 +23,7 @@ const Continent = ({ name, children }) => {
       </div>
       <ul className={visible ? "country" : "hide"}>
         {children.map((item, ind) => (
-          <Country key={ind} {...item} />
+          <Country key={ind} {...item} continentRef={continentRef}  />
         ))}
       </ul>
     </li>
