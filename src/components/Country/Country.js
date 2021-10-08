@@ -15,8 +15,8 @@ const Country = ({
 
   const toggleContent = () => {
     setVisible(!visible);
-    if (visible) setActiveCountry(activeCountry - 1);
-    if (!visible) setActiveCountry(activeCountry + 1);
+    if (visible) setActiveCountry(activeCountry => activeCountry - 1);
+    if (!visible) setActiveCountry(activeCountry => activeCountry + 1);
     continentRef.current.scrollIntoView();
   };
 
@@ -36,7 +36,7 @@ const Country = ({
         break;
       default:
         setLineLength("longest");
-       
+
     }
   }, [activeCountry, setLineLength, lineLength]);
 
