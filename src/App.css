@@ -1,31 +1,29 @@
 .app {
   text-align: center;
-
 }
 
 .main-container {
   width: 60%;
   margin: 0 auto;
   margin-top: 25px;
-
-
 }
 
-li {
-  border: 2px solid #000;
-  padding: 15px 30px;
-  margin-bottom: 20px;
-}
 .continent {
   width: 100%;
-
-
 }
 .country {
   width: 75%;
   margin-left: auto;
 }
-.country-name {
+.country-name,
+.continent-name,
+.city-name {
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: 15px 30px;
+  margin-bottom: 20px;
+}
+F .country-name {
   position: relative;
 }
 .country-name::after {
@@ -37,7 +35,6 @@ li {
   height: 1px;
   border: 1px dotted #000;
   transform: translateX(-160px);
-
 }
 .cities {
   width: 75%;
@@ -55,12 +52,12 @@ li {
   height: 1px;
   border: 1px dotted #000;
   transform: translateX(-314px);
-
 }
 .continent-name {
   position: relative;
   cursor: pointer;
 }
+
 .continent-name::after {
   content: "";
   position: absolute;
@@ -71,16 +68,12 @@ li {
   border: 1px dotted #000;
   transform: rotate(90deg);
   transform-origin: top left;
-
 }
+
 .no-after::after {
   content: none;
 }
 
 .hide {
   display: none;
-}
-
-.country-name, .continent-name, .city-name {
-  background-color: #fff;
 }
