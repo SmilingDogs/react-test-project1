@@ -6,8 +6,8 @@ const Country = ({ name, children }) => {
     <li>
       <div className="country-name">{name}</div>
       <ul className="cities">
-        {children.map((child, ind) => (
-          <City key={ind} child={child} />
+        {children.map((c, ind) => (
+          <City key={ind} cityName={c} />
         ))}
       </ul>
     </li>
