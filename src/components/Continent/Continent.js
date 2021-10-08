@@ -6,6 +6,7 @@ const Continent = ({ name, children }) => {
   const continentRef = useRef(null);
   const [visible, setVisible] = useState(false);
   const [lineLength, setLineLength] = useState("shortest");
+  const [activeCountry, setActiveCountry] = useState(0);
 
   const toggleContent = () => {
     setVisible(!visible);
@@ -34,6 +35,8 @@ const Continent = ({ name, children }) => {
             continentRef={continentRef}
             setLineLength={setLineLength}
             lineLength={lineLength}
+            activeCountry={activeCountry}
+            setActiveCountry={setActiveCountry}
           />
         ))}
       </ul>

@@ -42,10 +42,18 @@
 .shortest::after {
   width: 275px;
 }
-.other::after {
+.short::after {
   width: 423px;
 }
-
+.middle::after {
+  width: 573px;
+}
+.long::after{
+  width: 723px;
+}
+.longest::after {
+  width: 873px;
+}
 .no-connection::after {
   content: none;
 }
