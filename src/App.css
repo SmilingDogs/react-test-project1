@@ -70,7 +70,7 @@ F .country-name {
   transform-origin: top left;
 }
 
-.no-after::after {
+.no-connection::after {
   content: none;
 }
 

@@ -2,13 +2,10 @@ import "./App.css";
 import Continent from "./components/Continent/Continent";
 import info from "./data.json";
 
-function App() {
+const App = () => {
   const { data } = info;
 
-
-  const continents = data.map((item, ind) => (
-    <Continent key={ind} {...item} />
-  ));
+  const continents = data.map((item, ind) => <Continent key={ind} {...item} />);
 
   return (
     <div className="app">
