@@ -34,11 +34,16 @@
   position: absolute;
   bottom: -5px;
   left: 40px;
-  width: 920px;
   height: 1px;
   border: 1px dotted #000;
   transform: rotate(90deg);
   transform-origin: top left;
+}
+.shortest::after {
+  width: 275px;
+}
+.other::after {
+  width: 423px;
 }
 
 .no-connection::after {

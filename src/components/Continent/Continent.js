@@ -3,19 +3,24 @@ import { useState, useRef } from "react";
 import Country from "../Country/Country";
 
 const Continent = ({ name, children }) => {
-
   const continentRef = useRef(null);
   const [visible, setVisible] = useState(false);
+  const [lineLength, setLineLength] = useState("shortest");
 
   const toggleContent = () => {
     setVisible(!visible);
     continentRef.current.scrollIntoView();
+    setLineLength("shortest");
   };
 
   return (
     <li className="continent">
       <div
-        className={visible ? "continent-name" : "continent-name no-connection"}
+        className={
+          visible
+            ? `continent-name ${lineLength}`
+            : "continent-name no-connection"
+        }
         onClick={toggleContent}
         ref={continentRef}
       >
@@ -23,7 +28,13 @@ const Continent = ({ name, children }) => {
       </div>
       <ul className={visible ? "country" : "hide"}>
         {children.map((item, ind) => (
-          <Country key={ind} {...item} continentRef={continentRef}  />
+          <Country
+            key={ind}
+            {...item}
+            continentRef={continentRef}
+            setLineLength={setLineLength}
+            lineLength={lineLength}
+          />
         ))}
       </ul>
     </li>

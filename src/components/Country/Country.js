@@ -1,15 +1,15 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import City from "../City/City";
 
-const Country = ({ name, children, continentRef }) => {
+const Country = ({ name, children, continentRef, setLineLength, lineLength }) => {
 
-  const countryRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
   const toggleContent = () => {
     setVisible(!visible);
     continentRef.current.scrollIntoView();
+    setLineLength(lineLength === "shortest" ? "other" : "shortest")
   };
 
   return (
@@ -17,7 +17,6 @@ const Country = ({ name, children, continentRef }) => {
       <div
         className={visible ? "country-name" : "country-name no-connection"}
         onClick={toggleContent}
-        ref={countryRef}
       >
         {name}
       </div>
