@@ -63,7 +63,9 @@
 .no-connection::after {
   content: none;
 }
-
+.hide {
+  display: none;
+}
 .country-name {
   position: relative;
   cursor: pointer;
@@ -94,8 +96,4 @@
   height: 1px;
   border: 1px dotted #000;
   transform: translateX(-314px);
-}
-
-.hide {
-  display: none;
 }

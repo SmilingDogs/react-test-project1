@@ -1,15 +1,18 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import Country from "../Country/Country";
+import { GlobalContext } from "../../context/GlobalState";
 
 const Continent = ({ name, children }) => {
   const continentRef = useRef(null);
+  const { newClass, connection, showNestedAction } = useContext(GlobalContext);
   const [visible, setVisible] = useState(false);
   const [lineLength, setLineLength] = useState("shortest");
   const [activeCountry, setActiveCountry] = useState(0);
 
   const toggleContent = () => {
     setVisible(!visible);
+    showNestedAction()
     continentRef.current.scrollIntoView();
     setLineLength("shortest");
   };
@@ -19,7 +22,7 @@ const Continent = ({ name, children }) => {
       <div
         className={
           visible
-            ? `continent-name ${lineLength}`
+            ? `continent-name ${lineLength} ${connection}`
             : "continent-name no-connection"
         }
         onClick={toggleContent}
@@ -27,7 +30,7 @@ const Continent = ({ name, children }) => {
       >
         {name}
       </div>
-      <ul className={visible ? "country" : "hide"}>
+      <ul className={visible ? `country ${newClass}` : "hide"}>
         {children.map((item, ind) => (
           <Country
             key={ind}

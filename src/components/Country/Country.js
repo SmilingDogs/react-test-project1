@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import City from "../City/City";
-import { GlobalContext } from "../../context/GlobalState";
+
 
 const Country = ({
   name,
@@ -12,7 +12,7 @@ const Country = ({
   setActiveCountry,
 }) => {
   const [visible, setVisible] = useState(false);
-  const { newClass } = useContext(GlobalContext);
+
 
   const toggleContent = () => {
     setVisible(!visible);
@@ -42,7 +42,7 @@ const Country = ({
   }, [activeCountry, setLineLength, lineLength]);
 
   return (
-    <li className={`${newClass}`}>
+    <li>
       <div
         className={visible ? "country-name" : "country-name no-connection"}
         onClick={toggleContent}
