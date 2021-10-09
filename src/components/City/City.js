@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalState";
 
 const City = ({ cityName }) => {
-  return <li className="city-name">{cityName}</li>;
+  const { hideNestedAction } = useContext(GlobalContext);
+  return (
+    <li className="city-name" onClick={hideNestedAction}>
+      {cityName}
+    </li>
+  );
 };
 
 export default City;

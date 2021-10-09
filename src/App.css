@@ -23,10 +23,16 @@
   padding: 15px 30px;
   margin-bottom: 20px;
 }
-
+.city-name {
+  border: 1px solid #000;
+  font-size: 14px;
+}
 .continent-name {
   position: relative;
   cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  border: 3px solid #000;
 }
 
 .continent-name::after {
@@ -43,16 +49,16 @@
   width: 275px;
 }
 .short::after {
-  width: 423px;
+  width: 418px;
 }
 .middle::after {
-  width: 573px;
+  width: 560px;
 }
 .long::after{
-  width: 723px;
+  width: 700px;
 }
 .longest::after {
-  width: 873px;
+  width: 846px;
 }
 .no-connection::after {
   content: none;
@@ -83,7 +89,7 @@
   content: "";
   position: absolute;
   top: 26px;
-  left: -2px;
+  left: 0px;
   width: 314px;
   height: 1px;
   border: 1px dotted #000;
