@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import City from "../City/City";
+import useToggle from "../../hooks/useToggle";
 
 
 const Country = ({
@@ -11,11 +12,11 @@ const Country = ({
   activeCountry,
   setActiveCountry,
 }) => {
-  const [visible, setVisible] = useState(false);
 
+  const [visible, toggleVisible] = useToggle(false)
 
   const toggleContent = () => {
-    setVisible(!visible);
+    toggleVisible()
     if (visible) setActiveCountry(activeCountry => activeCountry - 1);
     if (!visible) setActiveCountry(activeCountry => activeCountry + 1);
     continentRef.current.scrollIntoView();

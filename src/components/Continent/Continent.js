@@ -2,16 +2,17 @@ import React from "react";
 import { useState, useRef, useContext } from "react";
 import Country from "../Country/Country";
 import { GlobalContext } from "../../context/GlobalState";
+import useToggle from "../../hooks/useToggle";
 
 const Continent = ({ name, children }) => {
   const continentRef = useRef(null);
   const { newClass, connection, showNestedAction } = useContext(GlobalContext);
-  const [visible, setVisible] = useState(false);
   const [lineLength, setLineLength] = useState("shortest");
   const [activeCountry, setActiveCountry] = useState(0);
+  const [visible, toggleVisible] = useToggle(false)
 
   const toggleContent = () => {
-    setVisible(!visible);
+    toggleVisible()
     showNestedAction()
     continentRef.current.scrollIntoView();
     setLineLength("shortest");
