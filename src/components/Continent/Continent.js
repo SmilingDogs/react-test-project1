@@ -3,6 +3,7 @@ import { useState, useRef, useContext } from "react";
 import Country from "../Country/Country";
 import { GlobalContext } from "../../context/GlobalState";
 import useToggle from "../../hooks/useToggle";
+import scrollFocus from "../../utils/scroll"
 
 const Continent = ({ name, children }) => {
   const continentRef = useRef(null);
@@ -14,7 +15,7 @@ const Continent = ({ name, children }) => {
   const toggleContent = () => {
     toggleVisible()
     showNestedAction()
-    continentRef.current.scrollIntoView();
+    scrollFocus(continentRef)
     setLineLength("shortest");
   };
 
@@ -38,7 +39,6 @@ const Continent = ({ name, children }) => {
             {...item}
             continentRef={continentRef}
             setLineLength={setLineLength}
-            lineLength={lineLength}
             activeCountry={activeCountry}
             setActiveCountry={setActiveCountry}
           />

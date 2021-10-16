@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import City from "../City/City";
 import useToggle from "../../hooks/useToggle";
+import scrollFocus from "../../utils/scroll";
 
 
 const Country = ({
@@ -8,7 +9,6 @@ const Country = ({
   children,
   continentRef,
   setLineLength,
-  lineLength,
   activeCountry,
   setActiveCountry,
 }) => {
@@ -19,7 +19,7 @@ const Country = ({
     toggleVisible()
     if (visible) setActiveCountry(activeCountry => activeCountry - 1);
     if (!visible) setActiveCountry(activeCountry => activeCountry + 1);
-    continentRef.current.scrollIntoView();
+    scrollFocus(continentRef)
   };
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Country = ({
         setLineLength("longest");
 
     }
-  }, [activeCountry, setLineLength, lineLength]);
+  }, [activeCountry, setLineLength]);
 
   return (
     <li>
